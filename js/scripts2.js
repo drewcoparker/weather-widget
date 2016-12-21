@@ -7,27 +7,29 @@ $(function() {
 
         // var carbonUrl =
         $.getJSON(weatherUrl, function(weatherData) {
-            console.log(weatherData);
+            // Assign variables to the API data
+            // Grab the temp, city name, and datetime fro the API data
             var temp = weatherData.main.temp;
             var name = weatherData.name;
-            console.log(weatherData.dt);
             var dt = new Date((weatherData.dt) * 1000).toString();
-            console.log(dt);
+
+            // Grab the location from the API data
             var lat = weatherData.coord.lat;
             var long = weatherData.coord.lon;
+
+            // Grab the wind speed from the API data
             var windSpeed = weatherData.wind.speed;
             var windOrigin = weatherData.wind.deg;
 
+            // Use the location data to construct a map using Google Map API
             var center = lat + "," + long;
-            console.log(center);
-            var map = "https://maps.googleapis.com/maps/api/staticmap?center="+center+"&zoom=9&size=500x500&maptype=terrain&markers=color:red&key=" + mapKey;
-            $('#location').html(name);
-            console.log(map);
+            var map = `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=9&size=500x300&maptype=terrain&markers=color:red%7C${center}&key=${mapKey}`;
 
+            // Update the DOM with the data collected form the API calls
+            $('.widget-body').css("background-image", `url(${map})`);
+            $('#location').html(name);
             $('#current-datetime').html(dt);
             $('#current-temp').html(temp + "&deg;");
-            // $('.widget-body').css({"background": "url("")"});
-            $('.widget-body').css("background-image", `url(${map})`);
 
 
         });
