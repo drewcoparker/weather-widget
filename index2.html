@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather widget</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/config.js"></script>
+        <script type="text/javascript" src="js/scripts2.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 widget-wrapper">
+                    <h2 id="widget-header">Weather</h2><hr>
+                    <div class="col-sm-10 widget-body">
+                        <h3 id="location"></h3>
+                        <div>
+                            <span id="current-datetime"></span>
+                        </div>
+                        <div>
+                            <span id="current-temp"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 widget-submit">
+                        <form id="weather-form">
+                            <div class="form-group">
+                                <label>Enter zip code</label>
+                                <input type="text" class="form-control" id="weather-zip" placeholder="Location">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
